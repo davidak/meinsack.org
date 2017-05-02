@@ -1,0 +1,24 @@
+www.meinsack.org {
+  redir https://meinsack.org{uri}
+}
+
+meinsack.org {
+  root /var/www/meinsack/web/
+  gzip
+
+  log /var/www/meinsack/log/access.log {
+    rotate {
+      size 100
+      age 96
+      keep 10
+    }
+  }
+
+  errors {
+    log /var/www/meinsack/log/error.log {
+      size 100
+      age 96
+      keep 10
+    }
+  }
+}
